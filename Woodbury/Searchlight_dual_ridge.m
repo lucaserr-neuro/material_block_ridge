@@ -134,5 +134,5 @@ ds_b = cosmo_fmri_dataset(sprintf('path/to/sub/beta_0001.nii',base_path,s),'mask
 P_val_ds = ds_b;
 P_val_ds = cosmo_remove_useless_data(P_val_ds);
 P_val_ds.samples = p_values;
-P_val_ds.samples = -10*log(P_val_ds.samples); % for visualisation purposes
+P_val_ds.samples = -log10(P_val_ds.samples); % for visualisation purposes
 cosmo_map2fmri(P_val_ds,'p_vals_sub-01.nii')
